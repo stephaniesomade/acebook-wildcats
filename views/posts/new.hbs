@@ -1,3 +1,4 @@
+
 <html>
 
 <head>
@@ -17,6 +18,13 @@
       <a href="#" class="btn btn-primary">Post</a>
       <a href="#" class="btn btn-primary">Add a photo</a>
     </div>
+    <form id="new-post-form" action="/posts" method="post">
+  <label for="message">Message: </label>
+  <input id="message" type="text"name="message"><br>
+  <label for="image_url">Image URL: </label>
+  <input id="image_url" type="text" name="image_url" value="">
+  <input type="submit" value="Submit" class="form-submit" >
+</form>
   </div>
 
 </body>
