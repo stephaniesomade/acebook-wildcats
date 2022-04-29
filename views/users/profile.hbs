@@ -1,3 +1,4 @@
+
 <head>
   <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -22,6 +23,7 @@
 </style>
 
 <h2> Profile Page </h2>
+ <img src="/images/Giraffe.png" alt="profile" width="140", height="140"><br>
 <h2>
   {{#each user}}
   <h3>
@@ -32,5 +34,14 @@
     {{this.email}}
   </h4>
 
+  {{/each}}
+  
+  <h2>List of Friends:</h2>
+{{#each user}}
+  {{#each this.friends}}
+  <li>
+  {{this}}
+  </li>
+  {{/each}}
   {{/each}}
 </h2>

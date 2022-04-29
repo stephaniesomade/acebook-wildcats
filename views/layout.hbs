@@ -6,22 +6,26 @@
     <title>{{title}}</title>
   </head>
 
+  <header>
+    <a href="/">
+      <img src="/images/acelogo.PNG" class="logo" alt="AceBook Logo">
+    </a>
+    <h1 class="header1">AceBook</h1>
+  </header>
 
   <body>
-    <header>
-      <a href="/">
-        <img src="/images/finallogo.PNG" class="logo" alt="AceBook Logo">
-      </a>
-      <h1>Welcome to <br> AceBook.com!</h1>
-    </header>
 
-  
     <div class="navbar"> 
       <a href="/"> Home </a>
       <a href="/posts"> Timeline </a>
-      <a href="/users/new"> Sign-up </a>
-      <a href="/sessions/new"> Log-in </a>
       <a href="/users/profile"> Profile </a>
+      <form class="log-in" action='/sessions/new' method='get'></br>
+          <input type="submit" value="Log In">
+        </form>
+        <form class="pull-left" action='/sessions?_method=DELETE' method='POST'></br>
+          <input type="submit" value="Log Out">
+        </form>
+      </a>
     </div>
     
     {{{body}}}
