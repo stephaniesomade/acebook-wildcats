@@ -5,7 +5,92 @@
 </head>
 
 <style>
-  input[type=submit] {
+
+   input[type=text], select {
+    width: 100%;
+    padding: 50px 50px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=url], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[value=Submit] {
+    width: 8%;
+    background-color: rgb(62, 177, 215);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: blue;
+  }
+
+  div {
+    border border-radius: 5px;
+    padding: 20px;
+  }
+
+  input[id=submit] {
+    width: 8%;
+    background-color: rgb(62, 177, 215);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[value=Like] {
+    width: 8%;
+    background-color: rgb(62, 177, 215);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+   input[value=Comment] {
+    width: 8%;
+    background-color: rgb(62, 177, 215);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[value=Friend] {
+    width: 8%;
+    background-color: rgb(62, 177, 215);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[id=profile] {
     width: 8%;
     background-color: rgb(62, 177, 215);
     color: white;
@@ -21,10 +106,12 @@
   <form id="new-post-form" action="/posts" method="post">
   <label for="message"></label>
   <input id="message" type="text"name="message" placeholder="Share your thoughts"><br>
-  <label for="image_url"></label>
-  <input id="image_url" type="text" name="image_url" value="" placeholder="Want to upload an image with your post? Paste URL here">
+  {{!-- <label for="image_url"></label>
+  <input id="image_url" type="text" name="image_url" value="" placeholder="Want to upload an image with your post? Paste URL here"> --}}
   <input type="submit" value="Submit" class="form-submit" >
 </form>
+
+<br>
 
 <ul class="posts">
   {{#each posts}}
@@ -50,3 +137,16 @@
   <img  class="avatar" alt="avatar" src="{{this.profilePic}}" style="height:70px; border-radius: 50%; border: 10px " />
   {{/each}}
 </ul>
+
+<h2>List of Other Users:</h2>
+{{#each name}}
+<li>{{this}}</li>
+<form action="/users/friend/{{this}}" method="post">
+  <input type="submit" value="Friend">
+</form>
+<form action="/users/friend/{{this}}" method="get">
+  <input type="submit" value="See Profile" id="profile">
+</form>
+<br>
+</ul>
+{{/each}}

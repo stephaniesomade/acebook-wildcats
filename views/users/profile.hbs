@@ -1,4 +1,3 @@
-
 <head>
   <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -6,9 +5,25 @@
 </head>
 
 <style>
-  .username {
+  .column1 {
+    float: left;
+    width: 75%;
+    padding: 15px;
     display: inline-block;
-    text-align: center;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .column2 {
+    float: right;
+    width: 25%;
+    padding: 15px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
 
   h2 {
@@ -20,28 +35,51 @@
     display: inline-block;
     text-align: center;
   }
+
+  h4 {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .profilepic {
+    float: left
+  }
 </style>
 
 <h2> Profile Page </h2>
- <img src="/images/Giraffe.png" alt="profile" width="140", height="140"><br>
-<h2>
-  {{#each user}}
-  <h3>
-    {{this.username}}
-  </h3>
+<div class="row">
+  <div class="column1">
 
-  <h4>
-    {{this.email}}
-  </h4>
+    {{#each user}}
+    <h3>
+      {{this.username}}
+    </h3>
 
-  {{/each}}
-  
-  <h2>List of Friends:</h2>
-{{#each user}}
-  {{#each this.friends}}
-  <li>
-  {{this}}
-  </li>
-  {{/each}}
-  {{/each}}
-</h2>
+    <br>
+
+    <h4>
+      {{this.email}}
+    </h4>
+
+    <br>
+
+    {{/each}}
+    <img src="/images/Giraffe.png" alt="profile" width="500" , height="500" name="profilepic">
+  </div>
+
+  <div class="column2">
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h2>List of Friends:</h2>
+    {{#each user}}
+    {{#each this.friends}}
+    <li>
+      {{this}}
+    </li>
+    {{/each}}
+    {{/each}}
+  </div>
+</div>
