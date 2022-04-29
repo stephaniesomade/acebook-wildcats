@@ -66,4 +66,16 @@ describe("User model", () => {
       });
     });
   });
+
+  it("can add friends", (done) => {
+    var friend = new User({ friends: "1"});
+    friend.save((err) => {
+      expect(err).toBeNull();
+      User.find((err, users) => {
+        expect(err).toBeNull();
+        expect(users[0].friends.join()).toBe("1");
+        done();
+      });
+    });
+  });
 });

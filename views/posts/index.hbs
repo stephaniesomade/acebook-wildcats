@@ -130,8 +130,8 @@
   <form id="comment" action="/posts/{{this.id}}" method="get">
   <input value="Comment" type="submit">
   </form>
-  <form action="/posts/likes/{{this.id}}" method="post"> 
-    <input type="submit" value="Like">
+  <form id="like" action="/posts/likes/{{this.id}}" method="post"> 
+  <input type="submit" value="Like">
   </form>
   {{this.likes.length}}<br>
   <img  class="avatar" alt="avatar" src="{{this.profilePic}}" style="height:70px; border-radius: 50%; border: 10px " />
