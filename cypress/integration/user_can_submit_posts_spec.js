@@ -16,21 +16,21 @@ describe("Timeline", () => {
     cy.visit("/posts");
     cy.contains("New post").click();
 
-    cy.get("#new-post-form").find('[type="text"]').type("Hello, world!");
+    cy.get("#new-post-form").find('#message').type("Hello, world!");
     cy.get("#new-post-form").submit();
 
     cy.get(".posts").should("contain", "Hello, world!");
 
-    // view posts in chronological order
+    //view posts in chronological order
     cy.visit("/posts")
     cy.contains("New post").click();
 
-    cy.get("#new-post-form").find('[type="text"]').type("Newest Post!");
+    cy.get("#new-post-form").find('#message').type("Newest Post!");
     cy.get("#new-post-form").submit();
     cy.visit("/posts")
     cy.contains("New post").click();
 
-    cy.get("#new-post-form").find('[type="text"]').type("Second Post!");
+    cy.get("#new-post-form").find('#message').type("Second Post!");
     cy.get("#new-post-form").submit();
     cy.get('ul li:first').should("contain", "Second Post!");
   });

@@ -1,4 +1,4 @@
-<head>
+  <head>
   <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link href='/stylesheets/style.css'  rel="stylesheet">
@@ -7,7 +7,7 @@
 
 <h2>Original Post: {{post.message}}</h2>
 <form id="comment-form" action="/posts/{{id}}" method="post">
-<input type="text" name="comments">
+<input id="comments" type="text" name="comments">
 <input type="submit" value="submit">
 </form>
 <h4>Comments:</h4>
