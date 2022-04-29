@@ -31,7 +31,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      expires: 600000,
+      //expires: 600000,
     },
   })
 );
@@ -57,7 +57,7 @@ const sessionChecker = (req, res, next) => {
 app.use("/", homeRouter);
 app.use("/posts", sessionChecker, postsRouter);
 app.use("/sessions", sessionsRouter);
-app.use("/users", sessionChecker, usersRouter);
+app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

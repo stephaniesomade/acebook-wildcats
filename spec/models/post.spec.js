@@ -35,18 +35,13 @@ describe("Post model", () => {
     });
   });
 
-  it("has a comment", () => {
-    var post = new Post({ message: "some message", comment: "test comment"});
-    expect(post.comment).toEqual("test comment");
-  });
-
-  it("can save a comment", (done) => {
-    var post = new Post({ message: "some message", comment: "test comment" });
-    post.save((err) => {
-      expect(err).toBeNull(); 
+  it("can save likes", (done) => {
+    var like = new Post({ likes: "1"});
+    like.save((err) => {
+      expect(err).toBeNull();
       Post.find((err, posts) => {
-        expect(err).toBeNull(); 
-        expect(posts[0]).toMatchObject({ message: "some message", comment: "test comment"})
+        expect(err).toBeNull();
+        expect(posts[0].likes.join()).toBe("1");
         done();
       });
     });
