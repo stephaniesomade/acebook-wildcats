@@ -11,7 +11,6 @@ describe("Comments", () => {
       cy.get("#password").type("password");
       cy.get("#submit").click();
 
-      cy.contains("New post").click();
       cy.get("#new-post-form").find('#message').type("Test post");
       cy.get("#new-post-form").submit();
       cy.url().should('include', '3030/posts');

@@ -14,7 +14,6 @@ describe("Timeline", () => {
 
     // submit a post
     cy.visit("/posts");
-    cy.contains("New post").click();
 
     cy.get("#new-post-form").find('#message').type("Hello, world!");
     cy.get("#new-post-form").submit();
@@ -23,12 +22,10 @@ describe("Timeline", () => {
 
     //view posts in chronological order
     cy.visit("/posts")
-    cy.contains("New post").click();
 
     cy.get("#new-post-form").find('#message').type("Newest Post!");
     cy.get("#new-post-form").submit();
     cy.visit("/posts")
-    cy.contains("New post").click();
 
     cy.get("#new-post-form").find('#message').type("Second Post!");
     cy.get("#new-post-form").submit();
