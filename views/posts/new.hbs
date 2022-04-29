@@ -4,29 +4,62 @@
 <head>
   <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-
   <link href="/stylesheets/style.css" rel="stylesheet">
-
 </head>
 
+<style>
+  input[type=text], select {
+    width: 100%;
+    padding: 150px 50px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=url], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 8%;
+    background-color: rgb(62, 177, 215);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: blue;
+  }
+
+  div {
+    border border-radius: 5px;
+    padding: 20px;
+  }
+</style>
+
 <body>
-  <div class="container">
-    <form>
-      <div class="form-group">
-        <textarea class="form-control status-box" rows="2" placeholder="Share your thoughts?"></textarea>
-      </div>
+  <div>
+      <form id="new-post-form" action="/posts" method="post">
+      <label for="message">Type your message: </label>
+      <input id="message" type="text" name="message"><br>
+      <label for="image_url">(Optional) Attach an image link to your post: </label>
+      <input id="image_url" type="url" name="image_url" value="">
+      <input type="submit" value="Post" class="form-submit">
     </form>
-    <div class="button-group pull-right">
-      <a href="#" class="btn btn-primary">Post</a>
-      <a href="#" class="btn btn-primary">Add a photo</a>
-    </div>
   </div>
 </body>
-  <form id="new-post-form" action="/posts" method="post">
-  <label for="message">Message: </label>
-  <input id="message" type="text"name="message"><br>
-  <label for="image_url">Image URL: </label>
-  <input id="image_url" type="text" name="image_url" value="">
-  <input type="submit" value="Submit" class="form-submit" >
-</form>
+
+
 </html>

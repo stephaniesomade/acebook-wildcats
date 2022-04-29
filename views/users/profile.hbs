@@ -1,8 +1,36 @@
-<h1> Profile Page </h1>
-<h1>
+<head>
+  <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='/stylesheets/style.css' rel="stylesheet">
+</head>
+
+<style>
+  .username {
+    display: inline-block;
+    text-align: center;
+  }
+
+  h2 {
+    display: inline-block;
+    text-align: center;
+  }
+
+  h3 {
+    display: inline-block;
+    text-align: center;
+  }
+</style>
+
+<h2> Profile Page </h2>
+<h2>
   {{#each user}}
-  {{this.username}}
-  {{this.profilePic}}
-  {{this.email}}
-{{/each}}
-</h1>
+  <h3>
+    {{this.username}}
+  </h3>
+
+  <h4>
+    {{this.email}}
+  </h4>
+
+  {{/each}}
+</h2>

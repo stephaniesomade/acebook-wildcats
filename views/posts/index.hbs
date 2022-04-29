@@ -1,32 +1,43 @@
 <head>
   <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link href='/stylesheets/style.css'  rel="stylesheet">
+  <link href='/stylesheets/style.css' rel="stylesheet">
 </head>
 
+<style>
+  input[type=submit] {
+    width: 8%;
+    background-color: rgb(62, 177, 215);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
+
 <h2>Timeline</h2>
-<a class="new-post-link" href="/posts/new">New post</a>
+<a class="new-post-link" href="/posts/new">New post</a> <br>
 <ul class="posts">
   {{#each posts}}
-  <img  class="avatar" alt="avatar" src="{{this.profilePic}}" style="height:70px; border-radius: 50%; border: 10px " />
+  <img class="avatar" alt="avatar" src="{{this.profilePic}}" style="height:70px; border-radius: 50%; border: 10px " />
   <li>
-  {{this.username}}
-  <br>
-  {{this.message}}<br>
-  {{#if this.image_url}}
-  <img class="post-image" src="{{this.image_url}}"
-  width="150"
-  height="150"/><br>
-  {{/if}}
-  <form id="comment" action="/posts/{{this.id}}" method="get">
-  <input value="comment" type="submit">
-  </form>
-  <form action="/posts/likes/{{this.id}}" method="post"> 
-    <input type="submit" value="likes">
-  </form>
-  {{this.likes.length}}
+    <h3>
+      {{this.username}}
+    </h3>
+    <br>
+    {{this.message}}<br>
+    {{#if this.image_url}}
+    <img class="post-image" src="{{this.image_url}}" width="150" height="150" /><br>
+    {{/if}}
+    <form id="comment" action="/posts/{{this.id}}" method="get">
+      <input value="Comment" type="submit">
+    </form>
+    <form action="/posts/likes/{{this.id}}" method="post">
+      <input type="submit" value="Like">
+    </form>
+    {{this.likes.length}}
 
-  {{/each}}
+    {{/each}}
 </ul>
-
-<a class="new-post-link" href="/posts/new">New post</a>

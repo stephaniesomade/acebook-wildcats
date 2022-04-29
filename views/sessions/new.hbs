@@ -4,11 +4,67 @@
   <link href='/stylesheets/style.css'  rel="stylesheet">
 </head>
 
+<style>
+
+  form {
+    display: inline-block;
+    text-align: center;
+  }
+
+  input[type=email],
+  select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=password],
+  select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 20%;
+    background-color: rgb(62, 177, 215);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  input[type=submit]:hover {
+    background-color: blue;
+  }
+
+  div {
+    border border-radius: 5px;
+    padding: 20px;
+  }
+</style>
+
 <form id="new-session-form" action="/sessions" method="post">
-  <h1> Log-in </h1>
-  <label for="email">Email: </label>
-  <input id="email" type="email" name="email" value="">
-  <label for="password">Password: </label>
-  <input id="password" type="password" name="password" value="">
-  <input id="submit" type="submit" value="Submit">
+  <h2> Log-in </h2> <br>
+  <br>
+  <div>
+    <label for="email">Email: </label> <br>
+    <input id="email" type="email" name="email" value=""> <br>
+    <label for="password">Password: </label> <br>
+    <input id="password" type="password" name="password" value=""> <br>
+    <input id="submit" type="submit" value="Enter AceBook">
+  </div>
 </form>
