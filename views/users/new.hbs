@@ -1,16 +1,80 @@
 <head>
   <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link href='/stylesheets/style.css'  rel="stylesheet">
+  <link href='/stylesheets/style.css' rel="stylesheet">
 </head>
 
-<div style="text-align:center">
+<style>
+  form {
+    display: inline-block;
+    text-align: center;
+  }
+
+  input[type=text],
+  select {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=email],
+  select {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=password],
+  select {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 8%;
+    background-color: rgb(62, 177, 215);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=file],
+  select {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+</style>
+
 <form id="new-user-form" action="/users" method="post">
-  <h1 style="color: rgb(19, 168, 236); font-family: Verdana;"> Sign up for an Acebook account </h1>
-  <input id="username" type="text" name="username" placeholder="username" /><br />
-  <input id="email" type="email" name="email" placeholder="email"/><br />
-  <input id="password" type="password" name="password" placeholder="password" /><br />
-  <input id="image" type="file" name="profilePic" placeholder="Photo" capture>
-  <input id="submit" type="submit" value="Submit"/>
+  <h2> Sign up for an Acebook account </h2>
+  <label for="username">Username: </label> <br>
+  <input id="username" type="text" name="username" value="" /> <br>
+  <label for="email">Email: </label> <br>
+  <input id="email" type="email" name="email" value="" /> <br>
+  <label for="password">Password: </label> <br>
+  <input id="password" type="password" name="password" value="" /> <br>
+  <label for="profilePic">Profile Pic: </label> <br>
+  <input id="image" type="file" name="profilePic" placeholder="Photo" capture> <br>
+  <input id="submit" type="submit" value="Submit" />
 </form>
-</div>
